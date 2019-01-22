@@ -1,0 +1,3966 @@
+{
+  "contractName": "PrizeFundWallet",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "lotteryAddress",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "prizeFundManagerAddress",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "profitWalletAddress",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "payable": true,
+      "stateMutability": "payable",
+      "type": "fallback"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_lottery_seller_address",
+          "type": "address"
+        },
+        {
+          "name": "_profitWalletAddress",
+          "type": "address"
+        },
+        {
+          "name": "_prizeFundManagerAddress",
+          "type": "address"
+        }
+      ],
+      "name": "init",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "lotteryId",
+          "type": "uint256"
+        }
+      ],
+      "name": "putFundsToPrizeWallet",
+      "outputs": [],
+      "payable": true,
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "lotteryId",
+          "type": "uint256"
+        }
+      ],
+      "name": "getLotteryBalance",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "sendFundsToPrizeFundManager",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "winner",
+          "type": "address"
+        },
+        {
+          "name": "value",
+          "type": "uint256"
+        }
+      ],
+      "name": "sendPrizeWinner",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getBalance",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608060405234801561001057600080fd5b50336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550610b76806100606000396000f3006080604052600436106100a4576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806312065fe014610112578063184b95591461013d5780633beedf6d146101c057806351758b69146102175780636c10ed991461025857806379397b91146102a55780637a9f5479146102fc578063d0ea53de14610313578063deabee3714610333578063f2fde38b1461038a575b6040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252601c8152602001807f446f6573206e6f742041636365707420454854206469726563746c790000000081525060200191505060405180910390fd5b34801561011e57600080fd5b506101276103cd565b6040518082815260200191505060405180910390f35b34801561014957600080fd5b506101be600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506103ec565b005b3480156101cc57600080fd5b506101d5610578565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561022357600080fd5b506102426004803603810190808035906020019092919050505061059e565b6040518082815260200191505060405180910390f35b34801561026457600080fd5b506102a3600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803590602001909291905050506105bb565b005b3480156102b157600080fd5b506102ba6106f1565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561030857600080fd5b50610311610717565b005b61033160048036038101908080359060200190929190505050610884565b005b34801561033f57600080fd5b50610348610a1d565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561039657600080fd5b506103cb600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610a43565b005b60003073ffffffffffffffffffffffffffffffffffffffff1631905090565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156104b0576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252601e8152602001807f4f6e6c79206f776e65722063616e20646f207468697320616374696f6e21000081525060200191505060405180910390fd5b82600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555081600260006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555080600360006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550505050565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600060046000838152602001908152602001600020549050919050565b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156106a6576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260388152602001807f4f6e6c79205072697a652046756e64204d616e6167657220436f6e747261637481526020017f2063616e2074616b65204554482066726f6d206865726521000000000000000081525060400191505060405180910390fd5b8173ffffffffffffffffffffffffffffffffffffffff166108fc829081150290604051600060405180830381858888f193505050501580156106ec573d6000803e3d6000fd5b505050565b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16141515610802576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260388152602001807f4f6e6c79205072697a652046756e64204d616e6167657220436f6e747261637481526020017f2063616e2074616b65204554482066726f6d206865726521000000000000000081525060400191505060405180910390fd5b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166108fc3073ffffffffffffffffffffffffffffffffffffffff16319081150290604051600060405180830381858888f19350505050158015610881573d6000803e3d6000fd5b50565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16148061092d5750600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16145b15156109ed576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260498152602001807f4f6e6c79204c6f74746572792053656c6c657220436f6e7472616374206f722081526020017f436f6d70616e792050726f66697420436f6e74726163742063616e207075742081526020017f455448206865726521000000000000000000000000000000000000000000000081525060600191505060405180910390fd5b34600460008381526020019081526020016000205401600460008381526020019081526020016000208190555050565b600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16141515610b07576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252601e8152602001807f4f6e6c79206f776e65722063616e20646f207468697320616374696f6e21000081525060200191505060405180910390fd5b806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550505600a165627a7a723058200cba3006cf652e342669f416eb0b7af0b57d2ab43113e34071b4d3da55b1eb870029",
+  "deployedBytecode": "0x6080604052600436106100a4576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806312065fe014610112578063184b95591461013d5780633beedf6d146101c057806351758b69146102175780636c10ed991461025857806379397b91146102a55780637a9f5479146102fc578063d0ea53de14610313578063deabee3714610333578063f2fde38b1461038a575b6040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252601c8152602001807f446f6573206e6f742041636365707420454854206469726563746c790000000081525060200191505060405180910390fd5b34801561011e57600080fd5b506101276103cd565b6040518082815260200191505060405180910390f35b34801561014957600080fd5b506101be600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506103ec565b005b3480156101cc57600080fd5b506101d5610578565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561022357600080fd5b506102426004803603810190808035906020019092919050505061059e565b6040518082815260200191505060405180910390f35b34801561026457600080fd5b506102a3600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803590602001909291905050506105bb565b005b3480156102b157600080fd5b506102ba6106f1565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561030857600080fd5b50610311610717565b005b61033160048036038101908080359060200190929190505050610884565b005b34801561033f57600080fd5b50610348610a1d565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561039657600080fd5b506103cb600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610a43565b005b60003073ffffffffffffffffffffffffffffffffffffffff1631905090565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156104b0576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252601e8152602001807f4f6e6c79206f776e65722063616e20646f207468697320616374696f6e21000081525060200191505060405180910390fd5b82600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555081600260006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555080600360006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550505050565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600060046000838152602001908152602001600020549050919050565b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156106a6576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260388152602001807f4f6e6c79205072697a652046756e64204d616e6167657220436f6e747261637481526020017f2063616e2074616b65204554482066726f6d206865726521000000000000000081525060400191505060405180910390fd5b8173ffffffffffffffffffffffffffffffffffffffff166108fc829081150290604051600060405180830381858888f193505050501580156106ec573d6000803e3d6000fd5b505050565b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16141515610802576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260388152602001807f4f6e6c79205072697a652046756e64204d616e6167657220436f6e747261637481526020017f2063616e2074616b65204554482066726f6d206865726521000000000000000081525060400191505060405180910390fd5b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166108fc3073ffffffffffffffffffffffffffffffffffffffff16319081150290604051600060405180830381858888f19350505050158015610881573d6000803e3d6000fd5b50565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16148061092d5750600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16145b15156109ed576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260498152602001807f4f6e6c79204c6f74746572792053656c6c657220436f6e7472616374206f722081526020017f436f6d70616e792050726f66697420436f6e74726163742063616e207075742081526020017f455448206865726521000000000000000000000000000000000000000000000081525060600191505060405180910390fd5b34600460008381526020019081526020016000205401600460008381526020019081526020016000208190555050565b600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16141515610b07576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252601e8152602001807f4f6e6c79206f776e65722063616e20646f207468697320616374696f6e21000081525060200191505060405180910390fd5b806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550505600a165627a7a723058200cba3006cf652e342669f416eb0b7af0b57d2ab43113e34071b4d3da55b1eb870029",
+  "sourceMap": "98:1750:16:-;;;345:45;8:9:-1;5:2;;;30:1;27;20:12;5:2;345:45:16;112:10:33;104:5;;:18;;;;;;;;;;;;;;;;;;98:1750:16;;;;;;",
+  "deployedSourceMap": "98:1750:16:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1799:38;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1650:99;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1650:99:16;;;;;;;;;;;;;;;;;;;;;;;398:306;;8:9:-1;5:2;;;30:1;27;20:12;5:2;398:306:16;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;160:29;;8:9:-1;5:2;;;30:1;27;20:12;5:2;160:29:16;;;;;;;;;;;;;;;;;;;;;;;;;;;1038:132;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1038:132:16;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1428:214;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1428:214:16;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;237:38;;8:9:-1;5:2;;;30:1;27;20:12;5:2;237:38:16;;;;;;;;;;;;;;;;;;;;;;;;;;;1178:242;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1178:242:16;;;;;;712:318;;;;;;;;;;;;;;;;;;;;;;;;;;196:34;;8:9:-1;5:2;;;30:1;27;20:12;5:2;196:34:16;;;;;;;;;;;;;;;;;;;;;;;;;;;260:97:33;;8:9:-1;5:2;;;30:1;27;20:12;5:2;260:97:33;;;;;;;;;;;;;;;;;;;;;;;;;;;;1650:99:16;1693:7;1728:4;1720:21;;;1713:28;;1650:99;:::o;398:306::-;192:5:33;;;;;;;;;;;178:19;;:10;:19;;;170:62;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;559:23:16;542:14;;:40;;;;;;;;;;;;;;;;;;615:20;593:19;;:42;;;;;;;;;;;;;;;;;;672:24;646:23;;:50;;;;;;;;;;;;;;;;;;398:306;;;:::o;160:29::-;;;;;;;;;;;;;:::o;1038:132::-;1104:7;1136:15;:26;1152:9;1136:26;;;;;;;;;;;;1129:33;;1038:132;;;:::o;1428:214::-;1517:23;;;;;;;;;;;1503:37;;:10;:37;;;1495:106;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1612:6;:15;;:22;1628:5;1612:22;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;1612:22:16;1428:214;;:::o;237:38::-;;;;;;;;;;;;;:::o;1178:242::-;1262:23;;;;;;;;;;;1248:37;;:10;:37;;;1240:106;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1357:23;;;;;;;;;;;:32;;:55;1398:4;1390:21;;;1357:55;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;1357:55:16;1178:242::o;712:318::-;815:14;;;;;;;;;;;801:28;;:10;:28;;;:65;;;;847:19;;;;;;;;;;;833:33;;:10;:33;;;801:65;793:151;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1013:9;984:15;:26;1000:9;984:26;;;;;;;;;;;;:38;955:15;:26;971:9;955:26;;;;;;;;;;;:67;;;;712:318;:::o;196:34::-;;;;;;;;;;;;;:::o;260:97:33:-;192:5;;;;;;;;;;;178:19;;:10;:19;;;170:62;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;341:8;333:5;;:16;;;;;;;;;;;;;;;;;;260:97;:::o",
+  "source": "pragma solidity ^0.4.24;\r\n\r\nimport \"./owner.sol\";\r\nimport \"./interfaces/IPrizeFundWallet.sol\";\r\n\r\ncontract PrizeFundWallet is Ownable, IPrizeFundWallet\r\n{\r\n    address public lotteryAddress;\r\n    address public profitWalletAddress;\r\n    address public prizeFundManagerAddress;\r\n\r\n    mapping (uint256 => uint256) private lotteryBalances;\r\n\r\n    constructor () public\r\n    {\r\n        \r\n    }\r\n\r\n    function init(address _lottery_seller_address, address _profitWalletAddress, address _prizeFundManagerAddress) public onlyOwner\r\n    {\r\n        lotteryAddress = _lottery_seller_address;\r\n        profitWalletAddress = _profitWalletAddress;\r\n        prizeFundManagerAddress = _prizeFundManagerAddress;\r\n    }\r\n\r\n    function putFundsToPrizeWallet(uint256 lotteryId) payable public\r\n    {\r\n        require(msg.sender == lotteryAddress || msg.sender == profitWalletAddress, \"Only Lottery Seller Contract or Company Profit Contract can put ETH here!\");\r\n        lotteryBalances[lotteryId] = lotteryBalances[lotteryId] + msg.value;\r\n    }\r\n\r\n    function getLotteryBalance(uint256 lotteryId) public view returns(uint256)\r\n    {\r\n        return lotteryBalances[lotteryId];\r\n    }\r\n\r\n    function sendFundsToPrizeFundManager() public\r\n    {\r\n        require(msg.sender == prizeFundManagerAddress, \"Only Prize Fund Manager Contract can take ETH from here!\");\r\n        prizeFundManagerAddress.transfer(address(this).balance);\r\n    }\r\n\r\n    function sendPrizeWinner(address winner, uint256 value) {\r\n        require(msg.sender == prizeFundManagerAddress, \"Only Prize Fund Manager Contract can take ETH from here!\");\r\n        winner.transfer(value);\r\n    }\r\n\r\n    function getBalance() public view returns (uint256) {\r\n        return address(this).balance;\r\n    }\r\n    \r\n    function () public payable {\r\n        revert(\"Does not Accept EHT directly\");\r\n    }\r\n}",
+  "sourcePath": "C:\\blockchain\\new_version\\hashlottery3\\truffle\\contracts\\PrizeFundWallet.sol",
+  "ast": {
+    "absolutePath": "/C/blockchain/new_version/hashlottery3/truffle/contracts/PrizeFundWallet.sol",
+    "exportedSymbols": {
+      "PrizeFundWallet": [
+        6603
+      ]
+    },
+    "id": 6604,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 6454,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:16"
+      },
+      {
+        "absolutePath": "/C/blockchain/new_version/hashlottery3/truffle/contracts/owner.sol",
+        "file": "./owner.sol",
+        "id": 6455,
+        "nodeType": "ImportDirective",
+        "scope": 6604,
+        "sourceUnit": 8096,
+        "src": "28:21:16",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/C/blockchain/new_version/hashlottery3/truffle/contracts/interfaces/IPrizeFundWallet.sol",
+        "file": "./interfaces/IPrizeFundWallet.sol",
+        "id": 6456,
+        "nodeType": "ImportDirective",
+        "scope": 6604,
+        "sourceUnit": 7860,
+        "src": "51:43:16",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 6457,
+              "name": "Ownable",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 8095,
+              "src": "126:7:16",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Ownable_$8095",
+                "typeString": "contract Ownable"
+              }
+            },
+            "id": 6458,
+            "nodeType": "InheritanceSpecifier",
+            "src": "126:7:16"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 6459,
+              "name": "IPrizeFundWallet",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 7859,
+              "src": "135:16:16",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_IPrizeFundWallet_$7859",
+                "typeString": "contract IPrizeFundWallet"
+              }
+            },
+            "id": 6460,
+            "nodeType": "InheritanceSpecifier",
+            "src": "135:16:16"
+          }
+        ],
+        "contractDependencies": [
+          7859,
+          8095
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 6603,
+        "linearizedBaseContracts": [
+          6603,
+          7859,
+          8095
+        ],
+        "name": "PrizeFundWallet",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 6462,
+            "name": "lotteryAddress",
+            "nodeType": "VariableDeclaration",
+            "scope": 6603,
+            "src": "160:29:16",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 6461,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "160:7:16",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 6464,
+            "name": "profitWalletAddress",
+            "nodeType": "VariableDeclaration",
+            "scope": 6603,
+            "src": "196:34:16",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 6463,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "196:7:16",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 6466,
+            "name": "prizeFundManagerAddress",
+            "nodeType": "VariableDeclaration",
+            "scope": 6603,
+            "src": "237:38:16",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 6465,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "237:7:16",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 6470,
+            "name": "lotteryBalances",
+            "nodeType": "VariableDeclaration",
+            "scope": 6603,
+            "src": "284:52:16",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_uint256_$",
+              "typeString": "mapping(uint256 => uint256)"
+            },
+            "typeName": {
+              "id": 6469,
+              "keyType": {
+                "id": 6467,
+                "name": "uint256",
+                "nodeType": "ElementaryTypeName",
+                "src": "293:7:16",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "284:28:16",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_uint256_$",
+                "typeString": "mapping(uint256 => uint256)"
+              },
+              "valueType": {
+                "id": 6468,
+                "name": "uint256",
+                "nodeType": "ElementaryTypeName",
+                "src": "304:7:16",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "private"
+          },
+          {
+            "body": {
+              "id": 6473,
+              "nodeType": "Block",
+              "src": "372:18:16",
+              "statements": []
+            },
+            "documentation": null,
+            "id": 6474,
+            "implemented": true,
+            "isConstructor": true,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6471,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "357:2:16"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 6472,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "372:0:16"
+            },
+            "scope": 6603,
+            "src": "345:45:16",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 6497,
+              "nodeType": "Block",
+              "src": "531:173:16",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 6487,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 6485,
+                      "name": "lotteryAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 6462,
+                      "src": "542:14:16",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 6486,
+                      "name": "_lottery_seller_address",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 6476,
+                      "src": "559:23:16",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "542:40:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 6488,
+                  "nodeType": "ExpressionStatement",
+                  "src": "542:40:16"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 6491,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 6489,
+                      "name": "profitWalletAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 6464,
+                      "src": "593:19:16",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 6490,
+                      "name": "_profitWalletAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 6478,
+                      "src": "615:20:16",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "593:42:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 6492,
+                  "nodeType": "ExpressionStatement",
+                  "src": "593:42:16"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 6495,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 6493,
+                      "name": "prizeFundManagerAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 6466,
+                      "src": "646:23:16",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 6494,
+                      "name": "_prizeFundManagerAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 6480,
+                      "src": "672:24:16",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "646:50:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 6496,
+                  "nodeType": "ExpressionStatement",
+                  "src": "646:50:16"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 6498,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 6483,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 6482,
+                  "name": "onlyOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 8082,
+                  "src": "516:9:16",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "516:9:16"
+              }
+            ],
+            "name": "init",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6481,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6476,
+                  "name": "_lottery_seller_address",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6498,
+                  "src": "412:31:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6475,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "412:7:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6478,
+                  "name": "_profitWalletAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6498,
+                  "src": "445:28:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6477,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "445:7:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6480,
+                  "name": "_prizeFundManagerAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6498,
+                  "src": "475:32:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6479,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "475:7:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "411:97:16"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 6484,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "531:0:16"
+            },
+            "scope": 6603,
+            "src": "398:306:16",
+            "stateMutability": "nonpayable",
+            "superFunction": 7851,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 6527,
+              "nodeType": "Block",
+              "src": "782:248:16",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        "id": 6512,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "commonType": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          },
+                          "id": 6507,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftExpression": {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 6504,
+                              "name": "msg",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 8110,
+                              "src": "801:3:16",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_magic_message",
+                                "typeString": "msg"
+                              }
+                            },
+                            "id": 6505,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "sender",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "801:10:16",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          "nodeType": "BinaryOperation",
+                          "operator": "==",
+                          "rightExpression": {
+                            "argumentTypes": null,
+                            "id": 6506,
+                            "name": "lotteryAddress",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 6462,
+                            "src": "815:14:16",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          "src": "801:28:16",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "||",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "commonType": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          },
+                          "id": 6511,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftExpression": {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 6508,
+                              "name": "msg",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 8110,
+                              "src": "833:3:16",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_magic_message",
+                                "typeString": "msg"
+                              }
+                            },
+                            "id": 6509,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "sender",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "833:10:16",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          "nodeType": "BinaryOperation",
+                          "operator": "==",
+                          "rightExpression": {
+                            "argumentTypes": null,
+                            "id": 6510,
+                            "name": "profitWalletAddress",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 6464,
+                            "src": "847:19:16",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          "src": "833:33:16",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "src": "801:65:16",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "4f6e6c79204c6f74746572792053656c6c657220436f6e7472616374206f7220436f6d70616e792050726f66697420436f6e74726163742063616e2070757420455448206865726521",
+                        "id": 6513,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "868:75:16",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_3fe6cbdc9da21583f4946b52f963bc762b6c3cf122ff63ee2fa3dc1d691b6ea7",
+                          "typeString": "literal_string \"Only Lottery Seller Contract or Company Profit Contract can put ETH here!\""
+                        },
+                        "value": "Only Lottery Seller Contract or Company Profit Contract can put ETH here!"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_3fe6cbdc9da21583f4946b52f963bc762b6c3cf122ff63ee2fa3dc1d691b6ea7",
+                          "typeString": "literal_string \"Only Lottery Seller Contract or Company Profit Contract can put ETH here!\""
+                        }
+                      ],
+                      "id": 6503,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        8113,
+                        8114
+                      ],
+                      "referencedDeclaration": 8114,
+                      "src": "793:7:16",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 6514,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "793:151:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 6515,
+                  "nodeType": "ExpressionStatement",
+                  "src": "793:151:16"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 6525,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 6516,
+                        "name": "lotteryBalances",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 6470,
+                        "src": "955:15:16",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_uint256_$",
+                          "typeString": "mapping(uint256 => uint256)"
+                        }
+                      },
+                      "id": 6518,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 6517,
+                        "name": "lotteryId",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 6500,
+                        "src": "971:9:16",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "955:26:16",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "commonType": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "id": 6524,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "leftExpression": {
+                        "argumentTypes": null,
+                        "baseExpression": {
+                          "argumentTypes": null,
+                          "id": 6519,
+                          "name": "lotteryBalances",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 6470,
+                          "src": "984:15:16",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_uint256_$_t_uint256_$",
+                            "typeString": "mapping(uint256 => uint256)"
+                          }
+                        },
+                        "id": 6521,
+                        "indexExpression": {
+                          "argumentTypes": null,
+                          "id": 6520,
+                          "name": "lotteryId",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 6500,
+                          "src": "1000:9:16",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "984:26:16",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "nodeType": "BinaryOperation",
+                      "operator": "+",
+                      "rightExpression": {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 6522,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 8110,
+                          "src": "1013:3:16",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 6523,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "value",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "1013:9:16",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "src": "984:38:16",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "955:67:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 6526,
+                  "nodeType": "ExpressionStatement",
+                  "src": "955:67:16"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 6528,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "putFundsToPrizeWallet",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6501,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6500,
+                  "name": "lotteryId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6528,
+                  "src": "743:17:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6499,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "743:7:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "742:19:16"
+            },
+            "payable": true,
+            "returnParameters": {
+              "id": 6502,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "782:0:16"
+            },
+            "scope": 6603,
+            "src": "712:318:16",
+            "stateMutability": "payable",
+            "superFunction": 7834,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 6539,
+              "nodeType": "Block",
+              "src": "1118:52:16",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 6535,
+                      "name": "lotteryBalances",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 6470,
+                      "src": "1136:15:16",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_uint256_$_t_uint256_$",
+                        "typeString": "mapping(uint256 => uint256)"
+                      }
+                    },
+                    "id": 6537,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "id": 6536,
+                      "name": "lotteryId",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 6530,
+                      "src": "1152:9:16",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "1136:26:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 6534,
+                  "id": 6538,
+                  "nodeType": "Return",
+                  "src": "1129:33:16"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 6540,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getLotteryBalance",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6531,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6530,
+                  "name": "lotteryId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6540,
+                  "src": "1065:17:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6529,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1065:7:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1064:19:16"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 6534,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6533,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6540,
+                  "src": "1104:7:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6532,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1104:7:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1103:9:16"
+            },
+            "scope": 6603,
+            "src": "1038:132:16",
+            "stateMutability": "view",
+            "superFunction": 7858,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 6560,
+              "nodeType": "Block",
+              "src": "1229:191:16",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "id": 6547,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 6544,
+                            "name": "msg",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 8110,
+                            "src": "1248:3:16",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_message",
+                              "typeString": "msg"
+                            }
+                          },
+                          "id": 6545,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "sender",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": null,
+                          "src": "1248:10:16",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "id": 6546,
+                          "name": "prizeFundManagerAddress",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 6466,
+                          "src": "1262:23:16",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "src": "1248:37:16",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "4f6e6c79205072697a652046756e64204d616e6167657220436f6e74726163742063616e2074616b65204554482066726f6d206865726521",
+                        "id": 6548,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1287:58:16",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_d6bd23fa3017f133f41ee7edae018ec7d73dc8a9bcb8c73c3b0a280cb47e7f62",
+                          "typeString": "literal_string \"Only Prize Fund Manager Contract can take ETH from here!\""
+                        },
+                        "value": "Only Prize Fund Manager Contract can take ETH from here!"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_d6bd23fa3017f133f41ee7edae018ec7d73dc8a9bcb8c73c3b0a280cb47e7f62",
+                          "typeString": "literal_string \"Only Prize Fund Manager Contract can take ETH from here!\""
+                        }
+                      ],
+                      "id": 6543,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        8113,
+                        8114
+                      ],
+                      "referencedDeclaration": 8114,
+                      "src": "1240:7:16",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 6549,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1240:106:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 6550,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1240:106:16"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "id": 6555,
+                              "name": "this",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 8191,
+                              "src": "1398:4:16",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_contract$_PrizeFundWallet_$6603",
+                                "typeString": "contract PrizeFundWallet"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_contract$_PrizeFundWallet_$6603",
+                                "typeString": "contract PrizeFundWallet"
+                              }
+                            ],
+                            "id": 6554,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "nodeType": "ElementaryTypeNameExpression",
+                            "src": "1390:7:16",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_address_$",
+                              "typeString": "type(address)"
+                            },
+                            "typeName": "address"
+                          },
+                          "id": 6556,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "typeConversion",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "1390:13:16",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "id": 6557,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "balance",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "1390:21:16",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 6551,
+                        "name": "prizeFundManagerAddress",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 6466,
+                        "src": "1357:23:16",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "id": 6553,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "transfer",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "1357:32:16",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_transfer_nonpayable$_t_uint256_$returns$__$",
+                        "typeString": "function (uint256)"
+                      }
+                    },
+                    "id": 6558,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1357:55:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 6559,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1357:55:16"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 6561,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "sendFundsToPrizeFundManager",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6541,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1214:2:16"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 6542,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1229:0:16"
+            },
+            "scope": 6603,
+            "src": "1178:242:16",
+            "stateMutability": "nonpayable",
+            "superFunction": 7837,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 6582,
+              "nodeType": "Block",
+              "src": "1484:158:16",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "id": 6572,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 6569,
+                            "name": "msg",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 8110,
+                            "src": "1503:3:16",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_message",
+                              "typeString": "msg"
+                            }
+                          },
+                          "id": 6570,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "sender",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": null,
+                          "src": "1503:10:16",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "id": 6571,
+                          "name": "prizeFundManagerAddress",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 6466,
+                          "src": "1517:23:16",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "src": "1503:37:16",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "4f6e6c79205072697a652046756e64204d616e6167657220436f6e74726163742063616e2074616b65204554482066726f6d206865726521",
+                        "id": 6573,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1542:58:16",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_d6bd23fa3017f133f41ee7edae018ec7d73dc8a9bcb8c73c3b0a280cb47e7f62",
+                          "typeString": "literal_string \"Only Prize Fund Manager Contract can take ETH from here!\""
+                        },
+                        "value": "Only Prize Fund Manager Contract can take ETH from here!"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_d6bd23fa3017f133f41ee7edae018ec7d73dc8a9bcb8c73c3b0a280cb47e7f62",
+                          "typeString": "literal_string \"Only Prize Fund Manager Contract can take ETH from here!\""
+                        }
+                      ],
+                      "id": 6568,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        8113,
+                        8114
+                      ],
+                      "referencedDeclaration": 8114,
+                      "src": "1495:7:16",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 6574,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1495:106:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 6575,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1495:106:16"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 6579,
+                        "name": "value",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 6565,
+                        "src": "1628:5:16",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 6576,
+                        "name": "winner",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 6563,
+                        "src": "1612:6:16",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "id": 6578,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "transfer",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "1612:15:16",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_transfer_nonpayable$_t_uint256_$returns$__$",
+                        "typeString": "function (uint256)"
+                      }
+                    },
+                    "id": 6580,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1612:22:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 6581,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1612:22:16"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 6583,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "sendPrizeWinner",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6566,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6563,
+                  "name": "winner",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6583,
+                  "src": "1453:14:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6562,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1453:7:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6565,
+                  "name": "value",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6583,
+                  "src": "1469:13:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6564,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1469:7:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1452:31:16"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 6567,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1484:0:16"
+            },
+            "scope": 6603,
+            "src": "1428:214:16",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 6593,
+              "nodeType": "Block",
+              "src": "1702:47:16",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "expression": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 6589,
+                          "name": "this",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 8191,
+                          "src": "1728:4:16",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_contract$_PrizeFundWallet_$6603",
+                            "typeString": "contract PrizeFundWallet"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_contract$_PrizeFundWallet_$6603",
+                            "typeString": "contract PrizeFundWallet"
+                          }
+                        ],
+                        "id": 6588,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "lValueRequested": false,
+                        "nodeType": "ElementaryTypeNameExpression",
+                        "src": "1720:7:16",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_address_$",
+                          "typeString": "type(address)"
+                        },
+                        "typeName": "address"
+                      },
+                      "id": 6590,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "typeConversion",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1720:13:16",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "id": 6591,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "memberName": "balance",
+                    "nodeType": "MemberAccess",
+                    "referencedDeclaration": null,
+                    "src": "1720:21:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 6587,
+                  "id": 6592,
+                  "nodeType": "Return",
+                  "src": "1713:28:16"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 6594,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getBalance",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6584,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1669:2:16"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 6587,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6586,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6594,
+                  "src": "1693:7:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6585,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1693:7:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1692:9:16"
+            },
+            "scope": 6603,
+            "src": "1650:99:16",
+            "stateMutability": "view",
+            "superFunction": 7842,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 6601,
+              "nodeType": "Block",
+              "src": "1788:57:16",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "446f6573206e6f742041636365707420454854206469726563746c79",
+                        "id": 6598,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1806:30:16",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_2b89701ce168961419e7c879527248f9bbd4f7f207c087c3fc98141408240983",
+                          "typeString": "literal_string \"Does not Accept EHT directly\""
+                        },
+                        "value": "Does not Accept EHT directly"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_stringliteral_2b89701ce168961419e7c879527248f9bbd4f7f207c087c3fc98141408240983",
+                          "typeString": "literal_string \"Does not Accept EHT directly\""
+                        }
+                      ],
+                      "id": 6597,
+                      "name": "revert",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        8115,
+                        8116
+                      ],
+                      "referencedDeclaration": 8116,
+                      "src": "1799:6:16",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_revert_pure$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (string memory) pure"
+                      }
+                    },
+                    "id": 6599,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1799:38:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 6600,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1799:38:16"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 6602,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6595,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1770:2:16"
+            },
+            "payable": true,
+            "returnParameters": {
+              "id": 6596,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1788:0:16"
+            },
+            "scope": 6603,
+            "src": "1761:84:16",
+            "stateMutability": "payable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 6604,
+        "src": "98:1750:16"
+      }
+    ],
+    "src": "0:1848:16"
+  },
+  "legacyAST": {
+    "absolutePath": "/C/blockchain/new_version/hashlottery3/truffle/contracts/PrizeFundWallet.sol",
+    "exportedSymbols": {
+      "PrizeFundWallet": [
+        6603
+      ]
+    },
+    "id": 6604,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 6454,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:16"
+      },
+      {
+        "absolutePath": "/C/blockchain/new_version/hashlottery3/truffle/contracts/owner.sol",
+        "file": "./owner.sol",
+        "id": 6455,
+        "nodeType": "ImportDirective",
+        "scope": 6604,
+        "sourceUnit": 8096,
+        "src": "28:21:16",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/C/blockchain/new_version/hashlottery3/truffle/contracts/interfaces/IPrizeFundWallet.sol",
+        "file": "./interfaces/IPrizeFundWallet.sol",
+        "id": 6456,
+        "nodeType": "ImportDirective",
+        "scope": 6604,
+        "sourceUnit": 7860,
+        "src": "51:43:16",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 6457,
+              "name": "Ownable",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 8095,
+              "src": "126:7:16",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Ownable_$8095",
+                "typeString": "contract Ownable"
+              }
+            },
+            "id": 6458,
+            "nodeType": "InheritanceSpecifier",
+            "src": "126:7:16"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 6459,
+              "name": "IPrizeFundWallet",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 7859,
+              "src": "135:16:16",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_IPrizeFundWallet_$7859",
+                "typeString": "contract IPrizeFundWallet"
+              }
+            },
+            "id": 6460,
+            "nodeType": "InheritanceSpecifier",
+            "src": "135:16:16"
+          }
+        ],
+        "contractDependencies": [
+          7859,
+          8095
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 6603,
+        "linearizedBaseContracts": [
+          6603,
+          7859,
+          8095
+        ],
+        "name": "PrizeFundWallet",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 6462,
+            "name": "lotteryAddress",
+            "nodeType": "VariableDeclaration",
+            "scope": 6603,
+            "src": "160:29:16",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 6461,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "160:7:16",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 6464,
+            "name": "profitWalletAddress",
+            "nodeType": "VariableDeclaration",
+            "scope": 6603,
+            "src": "196:34:16",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 6463,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "196:7:16",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 6466,
+            "name": "prizeFundManagerAddress",
+            "nodeType": "VariableDeclaration",
+            "scope": 6603,
+            "src": "237:38:16",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 6465,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "237:7:16",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 6470,
+            "name": "lotteryBalances",
+            "nodeType": "VariableDeclaration",
+            "scope": 6603,
+            "src": "284:52:16",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_uint256_$",
+              "typeString": "mapping(uint256 => uint256)"
+            },
+            "typeName": {
+              "id": 6469,
+              "keyType": {
+                "id": 6467,
+                "name": "uint256",
+                "nodeType": "ElementaryTypeName",
+                "src": "293:7:16",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "284:28:16",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_uint256_$",
+                "typeString": "mapping(uint256 => uint256)"
+              },
+              "valueType": {
+                "id": 6468,
+                "name": "uint256",
+                "nodeType": "ElementaryTypeName",
+                "src": "304:7:16",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "private"
+          },
+          {
+            "body": {
+              "id": 6473,
+              "nodeType": "Block",
+              "src": "372:18:16",
+              "statements": []
+            },
+            "documentation": null,
+            "id": 6474,
+            "implemented": true,
+            "isConstructor": true,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6471,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "357:2:16"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 6472,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "372:0:16"
+            },
+            "scope": 6603,
+            "src": "345:45:16",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 6497,
+              "nodeType": "Block",
+              "src": "531:173:16",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 6487,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 6485,
+                      "name": "lotteryAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 6462,
+                      "src": "542:14:16",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 6486,
+                      "name": "_lottery_seller_address",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 6476,
+                      "src": "559:23:16",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "542:40:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 6488,
+                  "nodeType": "ExpressionStatement",
+                  "src": "542:40:16"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 6491,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 6489,
+                      "name": "profitWalletAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 6464,
+                      "src": "593:19:16",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 6490,
+                      "name": "_profitWalletAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 6478,
+                      "src": "615:20:16",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "593:42:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 6492,
+                  "nodeType": "ExpressionStatement",
+                  "src": "593:42:16"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 6495,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 6493,
+                      "name": "prizeFundManagerAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 6466,
+                      "src": "646:23:16",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 6494,
+                      "name": "_prizeFundManagerAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 6480,
+                      "src": "672:24:16",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "646:50:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 6496,
+                  "nodeType": "ExpressionStatement",
+                  "src": "646:50:16"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 6498,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 6483,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 6482,
+                  "name": "onlyOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 8082,
+                  "src": "516:9:16",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "516:9:16"
+              }
+            ],
+            "name": "init",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6481,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6476,
+                  "name": "_lottery_seller_address",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6498,
+                  "src": "412:31:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6475,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "412:7:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6478,
+                  "name": "_profitWalletAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6498,
+                  "src": "445:28:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6477,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "445:7:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6480,
+                  "name": "_prizeFundManagerAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6498,
+                  "src": "475:32:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6479,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "475:7:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "411:97:16"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 6484,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "531:0:16"
+            },
+            "scope": 6603,
+            "src": "398:306:16",
+            "stateMutability": "nonpayable",
+            "superFunction": 7851,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 6527,
+              "nodeType": "Block",
+              "src": "782:248:16",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        "id": 6512,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "commonType": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          },
+                          "id": 6507,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftExpression": {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 6504,
+                              "name": "msg",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 8110,
+                              "src": "801:3:16",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_magic_message",
+                                "typeString": "msg"
+                              }
+                            },
+                            "id": 6505,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "sender",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "801:10:16",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          "nodeType": "BinaryOperation",
+                          "operator": "==",
+                          "rightExpression": {
+                            "argumentTypes": null,
+                            "id": 6506,
+                            "name": "lotteryAddress",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 6462,
+                            "src": "815:14:16",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          "src": "801:28:16",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "||",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "commonType": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          },
+                          "id": 6511,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftExpression": {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 6508,
+                              "name": "msg",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 8110,
+                              "src": "833:3:16",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_magic_message",
+                                "typeString": "msg"
+                              }
+                            },
+                            "id": 6509,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "sender",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "833:10:16",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          "nodeType": "BinaryOperation",
+                          "operator": "==",
+                          "rightExpression": {
+                            "argumentTypes": null,
+                            "id": 6510,
+                            "name": "profitWalletAddress",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 6464,
+                            "src": "847:19:16",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          "src": "833:33:16",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "src": "801:65:16",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "4f6e6c79204c6f74746572792053656c6c657220436f6e7472616374206f7220436f6d70616e792050726f66697420436f6e74726163742063616e2070757420455448206865726521",
+                        "id": 6513,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "868:75:16",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_3fe6cbdc9da21583f4946b52f963bc762b6c3cf122ff63ee2fa3dc1d691b6ea7",
+                          "typeString": "literal_string \"Only Lottery Seller Contract or Company Profit Contract can put ETH here!\""
+                        },
+                        "value": "Only Lottery Seller Contract or Company Profit Contract can put ETH here!"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_3fe6cbdc9da21583f4946b52f963bc762b6c3cf122ff63ee2fa3dc1d691b6ea7",
+                          "typeString": "literal_string \"Only Lottery Seller Contract or Company Profit Contract can put ETH here!\""
+                        }
+                      ],
+                      "id": 6503,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        8113,
+                        8114
+                      ],
+                      "referencedDeclaration": 8114,
+                      "src": "793:7:16",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 6514,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "793:151:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 6515,
+                  "nodeType": "ExpressionStatement",
+                  "src": "793:151:16"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 6525,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 6516,
+                        "name": "lotteryBalances",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 6470,
+                        "src": "955:15:16",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_uint256_$",
+                          "typeString": "mapping(uint256 => uint256)"
+                        }
+                      },
+                      "id": 6518,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 6517,
+                        "name": "lotteryId",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 6500,
+                        "src": "971:9:16",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "955:26:16",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "commonType": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "id": 6524,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "leftExpression": {
+                        "argumentTypes": null,
+                        "baseExpression": {
+                          "argumentTypes": null,
+                          "id": 6519,
+                          "name": "lotteryBalances",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 6470,
+                          "src": "984:15:16",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_uint256_$_t_uint256_$",
+                            "typeString": "mapping(uint256 => uint256)"
+                          }
+                        },
+                        "id": 6521,
+                        "indexExpression": {
+                          "argumentTypes": null,
+                          "id": 6520,
+                          "name": "lotteryId",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 6500,
+                          "src": "1000:9:16",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "984:26:16",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "nodeType": "BinaryOperation",
+                      "operator": "+",
+                      "rightExpression": {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 6522,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 8110,
+                          "src": "1013:3:16",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 6523,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "value",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "1013:9:16",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "src": "984:38:16",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "955:67:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 6526,
+                  "nodeType": "ExpressionStatement",
+                  "src": "955:67:16"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 6528,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "putFundsToPrizeWallet",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6501,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6500,
+                  "name": "lotteryId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6528,
+                  "src": "743:17:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6499,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "743:7:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "742:19:16"
+            },
+            "payable": true,
+            "returnParameters": {
+              "id": 6502,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "782:0:16"
+            },
+            "scope": 6603,
+            "src": "712:318:16",
+            "stateMutability": "payable",
+            "superFunction": 7834,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 6539,
+              "nodeType": "Block",
+              "src": "1118:52:16",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 6535,
+                      "name": "lotteryBalances",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 6470,
+                      "src": "1136:15:16",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_uint256_$_t_uint256_$",
+                        "typeString": "mapping(uint256 => uint256)"
+                      }
+                    },
+                    "id": 6537,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "id": 6536,
+                      "name": "lotteryId",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 6530,
+                      "src": "1152:9:16",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "1136:26:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 6534,
+                  "id": 6538,
+                  "nodeType": "Return",
+                  "src": "1129:33:16"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 6540,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getLotteryBalance",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6531,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6530,
+                  "name": "lotteryId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6540,
+                  "src": "1065:17:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6529,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1065:7:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1064:19:16"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 6534,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6533,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6540,
+                  "src": "1104:7:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6532,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1104:7:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1103:9:16"
+            },
+            "scope": 6603,
+            "src": "1038:132:16",
+            "stateMutability": "view",
+            "superFunction": 7858,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 6560,
+              "nodeType": "Block",
+              "src": "1229:191:16",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "id": 6547,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 6544,
+                            "name": "msg",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 8110,
+                            "src": "1248:3:16",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_message",
+                              "typeString": "msg"
+                            }
+                          },
+                          "id": 6545,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "sender",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": null,
+                          "src": "1248:10:16",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "id": 6546,
+                          "name": "prizeFundManagerAddress",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 6466,
+                          "src": "1262:23:16",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "src": "1248:37:16",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "4f6e6c79205072697a652046756e64204d616e6167657220436f6e74726163742063616e2074616b65204554482066726f6d206865726521",
+                        "id": 6548,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1287:58:16",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_d6bd23fa3017f133f41ee7edae018ec7d73dc8a9bcb8c73c3b0a280cb47e7f62",
+                          "typeString": "literal_string \"Only Prize Fund Manager Contract can take ETH from here!\""
+                        },
+                        "value": "Only Prize Fund Manager Contract can take ETH from here!"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_d6bd23fa3017f133f41ee7edae018ec7d73dc8a9bcb8c73c3b0a280cb47e7f62",
+                          "typeString": "literal_string \"Only Prize Fund Manager Contract can take ETH from here!\""
+                        }
+                      ],
+                      "id": 6543,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        8113,
+                        8114
+                      ],
+                      "referencedDeclaration": 8114,
+                      "src": "1240:7:16",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 6549,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1240:106:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 6550,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1240:106:16"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "id": 6555,
+                              "name": "this",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 8191,
+                              "src": "1398:4:16",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_contract$_PrizeFundWallet_$6603",
+                                "typeString": "contract PrizeFundWallet"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_contract$_PrizeFundWallet_$6603",
+                                "typeString": "contract PrizeFundWallet"
+                              }
+                            ],
+                            "id": 6554,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "nodeType": "ElementaryTypeNameExpression",
+                            "src": "1390:7:16",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_address_$",
+                              "typeString": "type(address)"
+                            },
+                            "typeName": "address"
+                          },
+                          "id": 6556,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "typeConversion",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "1390:13:16",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "id": 6557,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "balance",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "1390:21:16",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 6551,
+                        "name": "prizeFundManagerAddress",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 6466,
+                        "src": "1357:23:16",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "id": 6553,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "transfer",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "1357:32:16",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_transfer_nonpayable$_t_uint256_$returns$__$",
+                        "typeString": "function (uint256)"
+                      }
+                    },
+                    "id": 6558,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1357:55:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 6559,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1357:55:16"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 6561,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "sendFundsToPrizeFundManager",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6541,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1214:2:16"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 6542,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1229:0:16"
+            },
+            "scope": 6603,
+            "src": "1178:242:16",
+            "stateMutability": "nonpayable",
+            "superFunction": 7837,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 6582,
+              "nodeType": "Block",
+              "src": "1484:158:16",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "id": 6572,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 6569,
+                            "name": "msg",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 8110,
+                            "src": "1503:3:16",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_message",
+                              "typeString": "msg"
+                            }
+                          },
+                          "id": 6570,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "sender",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": null,
+                          "src": "1503:10:16",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "id": 6571,
+                          "name": "prizeFundManagerAddress",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 6466,
+                          "src": "1517:23:16",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "src": "1503:37:16",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "4f6e6c79205072697a652046756e64204d616e6167657220436f6e74726163742063616e2074616b65204554482066726f6d206865726521",
+                        "id": 6573,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1542:58:16",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_d6bd23fa3017f133f41ee7edae018ec7d73dc8a9bcb8c73c3b0a280cb47e7f62",
+                          "typeString": "literal_string \"Only Prize Fund Manager Contract can take ETH from here!\""
+                        },
+                        "value": "Only Prize Fund Manager Contract can take ETH from here!"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_d6bd23fa3017f133f41ee7edae018ec7d73dc8a9bcb8c73c3b0a280cb47e7f62",
+                          "typeString": "literal_string \"Only Prize Fund Manager Contract can take ETH from here!\""
+                        }
+                      ],
+                      "id": 6568,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        8113,
+                        8114
+                      ],
+                      "referencedDeclaration": 8114,
+                      "src": "1495:7:16",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 6574,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1495:106:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 6575,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1495:106:16"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 6579,
+                        "name": "value",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 6565,
+                        "src": "1628:5:16",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 6576,
+                        "name": "winner",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 6563,
+                        "src": "1612:6:16",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "id": 6578,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "transfer",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "1612:15:16",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_transfer_nonpayable$_t_uint256_$returns$__$",
+                        "typeString": "function (uint256)"
+                      }
+                    },
+                    "id": 6580,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1612:22:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 6581,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1612:22:16"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 6583,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "sendPrizeWinner",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6566,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6563,
+                  "name": "winner",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6583,
+                  "src": "1453:14:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6562,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1453:7:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6565,
+                  "name": "value",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6583,
+                  "src": "1469:13:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6564,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1469:7:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1452:31:16"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 6567,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1484:0:16"
+            },
+            "scope": 6603,
+            "src": "1428:214:16",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 6593,
+              "nodeType": "Block",
+              "src": "1702:47:16",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "expression": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 6589,
+                          "name": "this",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 8191,
+                          "src": "1728:4:16",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_contract$_PrizeFundWallet_$6603",
+                            "typeString": "contract PrizeFundWallet"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_contract$_PrizeFundWallet_$6603",
+                            "typeString": "contract PrizeFundWallet"
+                          }
+                        ],
+                        "id": 6588,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "lValueRequested": false,
+                        "nodeType": "ElementaryTypeNameExpression",
+                        "src": "1720:7:16",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_address_$",
+                          "typeString": "type(address)"
+                        },
+                        "typeName": "address"
+                      },
+                      "id": 6590,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "typeConversion",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1720:13:16",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "id": 6591,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "memberName": "balance",
+                    "nodeType": "MemberAccess",
+                    "referencedDeclaration": null,
+                    "src": "1720:21:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 6587,
+                  "id": 6592,
+                  "nodeType": "Return",
+                  "src": "1713:28:16"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 6594,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getBalance",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6584,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1669:2:16"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 6587,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6586,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6594,
+                  "src": "1693:7:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6585,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1693:7:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1692:9:16"
+            },
+            "scope": 6603,
+            "src": "1650:99:16",
+            "stateMutability": "view",
+            "superFunction": 7842,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 6601,
+              "nodeType": "Block",
+              "src": "1788:57:16",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "446f6573206e6f742041636365707420454854206469726563746c79",
+                        "id": 6598,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1806:30:16",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_2b89701ce168961419e7c879527248f9bbd4f7f207c087c3fc98141408240983",
+                          "typeString": "literal_string \"Does not Accept EHT directly\""
+                        },
+                        "value": "Does not Accept EHT directly"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_stringliteral_2b89701ce168961419e7c879527248f9bbd4f7f207c087c3fc98141408240983",
+                          "typeString": "literal_string \"Does not Accept EHT directly\""
+                        }
+                      ],
+                      "id": 6597,
+                      "name": "revert",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        8115,
+                        8116
+                      ],
+                      "referencedDeclaration": 8116,
+                      "src": "1799:6:16",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_revert_pure$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (string memory) pure"
+                      }
+                    },
+                    "id": 6599,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1799:38:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 6600,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1799:38:16"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 6602,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6595,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1770:2:16"
+            },
+            "payable": true,
+            "returnParameters": {
+              "id": 6596,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1788:0:16"
+            },
+            "scope": 6603,
+            "src": "1761:84:16",
+            "stateMutability": "payable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 6604,
+        "src": "98:1750:16"
+      }
+    ],
+    "src": "0:1848:16"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {
+    "29092018": {
+      "events": {},
+      "links": {},
+      "address": "0x73d6bdd767c87d7e48747772f25185d60f0cb694",
+      "transactionHash": "0x97ce2900916c62b019807848f18707e540de76aa6bc2f117737f4967a988b342"
+    }
+  },
+  "schemaVersion": "2.0.1",
+  "updatedAt": "2018-12-10T17:52:30.241Z"
+}

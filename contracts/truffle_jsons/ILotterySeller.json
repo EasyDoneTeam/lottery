@@ -1,0 +1,782 @@
+{
+  "contractName": "ILotterySeller",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "buyer",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "ticketsSold",
+          "type": "uint256"
+        }
+      ],
+      "name": "ticketsSold",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "lotNumber",
+          "type": "uint256"
+        }
+      ],
+      "name": "newLotNumberSetup",
+      "type": "event"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_deadline",
+          "type": "uint256"
+        },
+        {
+          "name": "_start",
+          "type": "uint256"
+        },
+        {
+          "name": "_lotteryLotNumber",
+          "type": "uint256"
+        }
+      ],
+      "name": "setNewLotteryLot",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_price",
+          "type": "uint256"
+        }
+      ],
+      "name": "setPrice",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "buyTickets",
+      "outputs": [],
+      "payable": true,
+      "stateMutability": "payable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity ^0.4.24;\r\n\r\n\r\ncontract ILotterySeller{\r\n    event ticketsSold(address buyer, uint ticketsSold);\r\n    event newLotNumberSetup(uint lotNumber);\r\n\r\n    function setNewLotteryLot(uint _deadline, uint _start, uint _lotteryLotNumber) public;\r\n    function setPrice (uint _price) public;\r\n    function buyTickets() public payable;\r\n}",
+  "sourcePath": "C:\\blockchain\\new_version\\hashlottery3\\truffle\\contracts\\interfaces\\ILotterySeller.sol",
+  "ast": {
+    "absolutePath": "/C/blockchain/new_version/hashlottery3/truffle/contracts/interfaces/ILotterySeller.sol",
+    "exportedSymbols": {
+      "ILotterySeller": [
+        7792
+      ]
+    },
+    "id": 7793,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 7764,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:26"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 7792,
+        "linearizedBaseContracts": [
+          7792
+        ],
+        "name": "ILotterySeller",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 7770,
+            "name": "ticketsSold",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 7769,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7766,
+                  "indexed": false,
+                  "name": "buyer",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7770,
+                  "src": "78:13:26",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 7765,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "78:7:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 7768,
+                  "indexed": false,
+                  "name": "ticketsSold",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7770,
+                  "src": "93:16:26",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7767,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "93:4:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "77:33:26"
+            },
+            "src": "60:51:26"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 7774,
+            "name": "newLotNumberSetup",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 7773,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7772,
+                  "indexed": false,
+                  "name": "lotNumber",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7774,
+                  "src": "141:14:26",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7771,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "141:4:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "140:16:26"
+            },
+            "src": "117:40:26"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 7783,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "setNewLotteryLot",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7781,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7776,
+                  "name": "_deadline",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7783,
+                  "src": "191:14:26",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7775,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "191:4:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 7778,
+                  "name": "_start",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7783,
+                  "src": "207:11:26",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7777,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "207:4:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 7780,
+                  "name": "_lotteryLotNumber",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7783,
+                  "src": "220:22:26",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7779,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "220:4:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "190:53:26"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 7782,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "250:0:26"
+            },
+            "scope": 7792,
+            "src": "165:86:26",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 7788,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "setPrice",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7786,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7785,
+                  "name": "_price",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7788,
+                  "src": "276:11:26",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7784,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "276:4:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "275:13:26"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 7787,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "295:0:26"
+            },
+            "scope": 7792,
+            "src": "257:39:26",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 7791,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "buyTickets",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7789,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "321:2:26"
+            },
+            "payable": true,
+            "returnParameters": {
+              "id": 7790,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "338:0:26"
+            },
+            "scope": 7792,
+            "src": "302:37:26",
+            "stateMutability": "payable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 7793,
+        "src": "30:312:26"
+      }
+    ],
+    "src": "0:342:26"
+  },
+  "legacyAST": {
+    "absolutePath": "/C/blockchain/new_version/hashlottery3/truffle/contracts/interfaces/ILotterySeller.sol",
+    "exportedSymbols": {
+      "ILotterySeller": [
+        7792
+      ]
+    },
+    "id": 7793,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 7764,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:26"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 7792,
+        "linearizedBaseContracts": [
+          7792
+        ],
+        "name": "ILotterySeller",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 7770,
+            "name": "ticketsSold",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 7769,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7766,
+                  "indexed": false,
+                  "name": "buyer",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7770,
+                  "src": "78:13:26",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 7765,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "78:7:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 7768,
+                  "indexed": false,
+                  "name": "ticketsSold",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7770,
+                  "src": "93:16:26",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7767,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "93:4:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "77:33:26"
+            },
+            "src": "60:51:26"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 7774,
+            "name": "newLotNumberSetup",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 7773,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7772,
+                  "indexed": false,
+                  "name": "lotNumber",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7774,
+                  "src": "141:14:26",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7771,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "141:4:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "140:16:26"
+            },
+            "src": "117:40:26"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 7783,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "setNewLotteryLot",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7781,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7776,
+                  "name": "_deadline",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7783,
+                  "src": "191:14:26",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7775,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "191:4:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 7778,
+                  "name": "_start",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7783,
+                  "src": "207:11:26",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7777,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "207:4:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 7780,
+                  "name": "_lotteryLotNumber",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7783,
+                  "src": "220:22:26",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7779,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "220:4:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "190:53:26"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 7782,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "250:0:26"
+            },
+            "scope": 7792,
+            "src": "165:86:26",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 7788,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "setPrice",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7786,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7785,
+                  "name": "_price",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7788,
+                  "src": "276:11:26",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7784,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "276:4:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "275:13:26"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 7787,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "295:0:26"
+            },
+            "scope": 7792,
+            "src": "257:39:26",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 7791,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "buyTickets",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7789,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "321:2:26"
+            },
+            "payable": true,
+            "returnParameters": {
+              "id": 7790,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "338:0:26"
+            },
+            "scope": 7792,
+            "src": "302:37:26",
+            "stateMutability": "payable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 7793,
+        "src": "30:312:26"
+      }
+    ],
+    "src": "0:342:26"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "2.0.1",
+  "updatedAt": "2018-12-10T17:48:05.082Z"
+}

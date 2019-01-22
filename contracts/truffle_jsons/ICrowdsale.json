@@ -1,0 +1,1202 @@
+{
+  "contractName": "ICrowdsale",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "recipient",
+          "type": "address"
+        }
+      ],
+      "name": "GoalReached",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "backer",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "FundTransfer",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "investor",
+          "type": "address"
+        }
+      ],
+      "name": "BeforeDeadlineBonus",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "investor",
+          "type": "address"
+        }
+      ],
+      "name": "EarlyInvestorBonus",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "investor",
+          "type": "address"
+        }
+      ],
+      "name": "AdditionalBonus",
+      "type": "event"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "isCrowdsaleClosed",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getInvestorCount",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getTokensSold",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "weiAmount",
+          "type": "uint256"
+        }
+      ],
+      "name": "estimateTokens",
+      "outputs": [
+        {
+          "name": "tokenEstimation",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity ^0.4.24;\r\n\r\ncontract ICrowdsale {\r\n    function isCrowdsaleClosed() public view returns(bool);\r\n    function getInvestorCount() public view returns(uint256);\r\n    function getTokensSold() public view returns(uint256);\r\n    function estimateTokens(uint weiAmount) public view returns(uint tokenEstimation);\r\n\r\n    event GoalReached(address recipient);\r\n    event FundTransfer(address backer, uint amount);\r\n    \r\n    event BeforeDeadlineBonus(address investor);\r\n    event EarlyInvestorBonus(address investor);\r\n    event AdditionalBonus(address investor);\r\n}",
+  "sourcePath": "C:\\blockchain\\new_version\\hashlottery3\\truffle\\contracts\\interfaces\\ICrowdsale.sol",
+  "ast": {
+    "absolutePath": "/C/blockchain/new_version/hashlottery3/truffle/contracts/interfaces/ICrowdsale.sol",
+    "exportedSymbols": {
+      "ICrowdsale": [
+        7261
+      ]
+    },
+    "id": 7262,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 7216,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:20"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 7261,
+        "linearizedBaseContracts": [
+          7261
+        ],
+        "name": "ICrowdsale",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "id": 7221,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "isCrowdsaleClosed",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7217,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "81:2:20"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 7220,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7219,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7221,
+                  "src": "104:4:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 7218,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "104:4:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "103:6:20"
+            },
+            "scope": 7261,
+            "src": "55:55:20",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 7226,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getInvestorCount",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7222,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "141:2:20"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 7225,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7224,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7226,
+                  "src": "164:7:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7223,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "164:7:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "163:9:20"
+            },
+            "scope": 7261,
+            "src": "116:57:20",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 7231,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getTokensSold",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7227,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "201:2:20"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 7230,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7229,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7231,
+                  "src": "224:7:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7228,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "224:7:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "223:9:20"
+            },
+            "scope": 7261,
+            "src": "179:54:20",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 7238,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "estimateTokens",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7234,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7233,
+                  "name": "weiAmount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7238,
+                  "src": "263:14:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7232,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "263:4:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "262:16:20"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 7237,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7236,
+                  "name": "tokenEstimation",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7238,
+                  "src": "299:20:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7235,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "299:4:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "298:22:20"
+            },
+            "scope": 7261,
+            "src": "239:82:20",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 7242,
+            "name": "GoalReached",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 7241,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7240,
+                  "indexed": false,
+                  "name": "recipient",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7242,
+                  "src": "347:17:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 7239,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "347:7:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "346:19:20"
+            },
+            "src": "329:37:20"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 7248,
+            "name": "FundTransfer",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 7247,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7244,
+                  "indexed": false,
+                  "name": "backer",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7248,
+                  "src": "391:14:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 7243,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "391:7:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 7246,
+                  "indexed": false,
+                  "name": "amount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7248,
+                  "src": "407:11:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7245,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "407:4:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "390:29:20"
+            },
+            "src": "372:48:20"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 7252,
+            "name": "BeforeDeadlineBonus",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 7251,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7250,
+                  "indexed": false,
+                  "name": "investor",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7252,
+                  "src": "458:16:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 7249,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "458:7:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "457:18:20"
+            },
+            "src": "432:44:20"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 7256,
+            "name": "EarlyInvestorBonus",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 7255,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7254,
+                  "indexed": false,
+                  "name": "investor",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7256,
+                  "src": "507:16:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 7253,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "507:7:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "506:18:20"
+            },
+            "src": "482:43:20"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 7260,
+            "name": "AdditionalBonus",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 7259,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7258,
+                  "indexed": false,
+                  "name": "investor",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7260,
+                  "src": "553:16:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 7257,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "553:7:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "552:18:20"
+            },
+            "src": "531:40:20"
+          }
+        ],
+        "scope": 7262,
+        "src": "28:546:20"
+      }
+    ],
+    "src": "0:574:20"
+  },
+  "legacyAST": {
+    "absolutePath": "/C/blockchain/new_version/hashlottery3/truffle/contracts/interfaces/ICrowdsale.sol",
+    "exportedSymbols": {
+      "ICrowdsale": [
+        7261
+      ]
+    },
+    "id": 7262,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 7216,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:20"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 7261,
+        "linearizedBaseContracts": [
+          7261
+        ],
+        "name": "ICrowdsale",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "id": 7221,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "isCrowdsaleClosed",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7217,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "81:2:20"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 7220,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7219,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7221,
+                  "src": "104:4:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 7218,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "104:4:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "103:6:20"
+            },
+            "scope": 7261,
+            "src": "55:55:20",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 7226,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getInvestorCount",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7222,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "141:2:20"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 7225,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7224,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7226,
+                  "src": "164:7:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7223,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "164:7:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "163:9:20"
+            },
+            "scope": 7261,
+            "src": "116:57:20",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 7231,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getTokensSold",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7227,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "201:2:20"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 7230,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7229,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7231,
+                  "src": "224:7:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7228,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "224:7:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "223:9:20"
+            },
+            "scope": 7261,
+            "src": "179:54:20",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 7238,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "estimateTokens",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7234,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7233,
+                  "name": "weiAmount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7238,
+                  "src": "263:14:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7232,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "263:4:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "262:16:20"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 7237,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7236,
+                  "name": "tokenEstimation",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7238,
+                  "src": "299:20:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7235,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "299:4:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "298:22:20"
+            },
+            "scope": 7261,
+            "src": "239:82:20",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 7242,
+            "name": "GoalReached",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 7241,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7240,
+                  "indexed": false,
+                  "name": "recipient",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7242,
+                  "src": "347:17:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 7239,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "347:7:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "346:19:20"
+            },
+            "src": "329:37:20"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 7248,
+            "name": "FundTransfer",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 7247,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7244,
+                  "indexed": false,
+                  "name": "backer",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7248,
+                  "src": "391:14:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 7243,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "391:7:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 7246,
+                  "indexed": false,
+                  "name": "amount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7248,
+                  "src": "407:11:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7245,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "407:4:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "390:29:20"
+            },
+            "src": "372:48:20"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 7252,
+            "name": "BeforeDeadlineBonus",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 7251,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7250,
+                  "indexed": false,
+                  "name": "investor",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7252,
+                  "src": "458:16:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 7249,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "458:7:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "457:18:20"
+            },
+            "src": "432:44:20"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 7256,
+            "name": "EarlyInvestorBonus",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 7255,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7254,
+                  "indexed": false,
+                  "name": "investor",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7256,
+                  "src": "507:16:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 7253,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "507:7:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "506:18:20"
+            },
+            "src": "482:43:20"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 7260,
+            "name": "AdditionalBonus",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 7259,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7258,
+                  "indexed": false,
+                  "name": "investor",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7260,
+                  "src": "553:16:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 7257,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "553:7:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "552:18:20"
+            },
+            "src": "531:40:20"
+          }
+        ],
+        "scope": 7262,
+        "src": "28:546:20"
+      }
+    ],
+    "src": "0:574:20"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "2.0.1",
+  "updatedAt": "2018-12-10T17:48:05.078Z"
+}

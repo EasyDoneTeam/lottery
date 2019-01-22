@@ -1,0 +1,1329 @@
+{
+  "contractName": "IProfitWallet",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_profit_manager_address",
+          "type": "address"
+        },
+        {
+          "name": "_token_address",
+          "type": "address"
+        },
+        {
+          "name": "_prize_fund_wallet_address",
+          "type": "address"
+        },
+        {
+          "name": "_lottery_address",
+          "type": "address"
+        }
+      ],
+      "name": "init",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_lap",
+          "type": "uint256"
+        }
+      ],
+      "name": "receiveProfit",
+      "outputs": [],
+      "payable": true,
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getBalance",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_shareholder",
+          "type": "address"
+        },
+        {
+          "name": "recepient",
+          "type": "address"
+        }
+      ],
+      "name": "payToShareholder",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "lotteryId",
+          "type": "uint256"
+        }
+      ],
+      "name": "sendProfitToPrizeFundWallet",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_holder",
+          "type": "address"
+        },
+        {
+          "name": "_proportion",
+          "type": "uint256"
+        }
+      ],
+      "name": "updateShareHolder",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "closeCurrentLap",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getShareholderUnpaidDividends",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity ^0.4.24;\r\n\r\ncontract IProfitWallet\r\n{\r\n    function init(address _profit_manager_address, address _token_address, address _prize_fund_wallet_address, address _lottery_address) public;\r\n\r\n    //receive profit with lap's num from lottery contract\r\n    function receiveProfit(uint _lap) payable public;\r\n\r\n    // return total balance of company's profit\r\n    function getBalance() public view returns (uint256);\r\n\r\n    // send shareholder's profit to him\r\n    function payToShareholder(address _shareholder, address recepient) public;\r\n\r\n    // send profit to prize fund wallet when lottery fails\r\n    function sendProfitToPrizeFundWallet(uint256 lotteryId) public;\r\n\r\n    // update shareholder's proportion\r\n    function updateShareHolder(address _holder, uint _proportion) public;\r\n\r\n    // close lap and distribute profit by shareholders\r\n    function closeCurrentLap() public;\r\n\r\n    function getShareholderUnpaidDividends() public view returns (uint256);\r\n}\r\n",
+  "sourcePath": "C:\\blockchain\\new_version\\hashlottery3\\truffle\\contracts\\interfaces\\IProfitWallet.sol",
+  "ast": {
+    "absolutePath": "/C/blockchain/new_version/hashlottery3/truffle/contracts/interfaces/IProfitWallet.sol",
+    "exportedSymbols": {
+      "IProfitWallet": [
+        7929
+      ]
+    },
+    "id": 7930,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 7880,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:31"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 7929,
+        "linearizedBaseContracts": [
+          7929
+        ],
+        "name": "IProfitWallet",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "id": 7891,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "init",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7889,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7882,
+                  "name": "_profit_manager_address",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7891,
+                  "src": "73:31:31",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 7881,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "73:7:31",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 7884,
+                  "name": "_token_address",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7891,
+                  "src": "106:22:31",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 7883,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "106:7:31",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 7886,
+                  "name": "_prize_fund_wallet_address",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7891,
+                  "src": "130:34:31",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 7885,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "130:7:31",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 7888,
+                  "name": "_lottery_address",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7891,
+                  "src": "166:24:31",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 7887,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "166:7:31",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "72:119:31"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 7890,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "198:0:31"
+            },
+            "scope": 7929,
+            "src": "59:140:31",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 7896,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "receiveProfit",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7894,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7893,
+                  "name": "_lap",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7896,
+                  "src": "289:9:31",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7892,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "289:4:31",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "288:11:31"
+            },
+            "payable": true,
+            "returnParameters": {
+              "id": 7895,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "314:0:31"
+            },
+            "scope": 7929,
+            "src": "266:49:31",
+            "stateMutability": "payable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 7901,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getBalance",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7897,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "391:2:31"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 7900,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7899,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7901,
+                  "src": "415:7:31",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7898,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "415:7:31",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "414:9:31"
+            },
+            "scope": 7929,
+            "src": "372:52:31",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 7908,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "payToShareholder",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7906,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7903,
+                  "name": "_shareholder",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7908,
+                  "src": "499:20:31",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 7902,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "499:7:31",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 7905,
+                  "name": "recepient",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7908,
+                  "src": "521:17:31",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 7904,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "521:7:31",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "498:41:31"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 7907,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "546:0:31"
+            },
+            "scope": 7929,
+            "src": "473:74:31",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 7913,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "sendProfitToPrizeFundWallet",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7911,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7910,
+                  "name": "lotteryId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7913,
+                  "src": "652:17:31",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7909,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "652:7:31",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "651:19:31"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 7912,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "677:0:31"
+            },
+            "scope": 7929,
+            "src": "615:63:31",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 7920,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "updateShareHolder",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7918,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7915,
+                  "name": "_holder",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7920,
+                  "src": "753:15:31",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 7914,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "753:7:31",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 7917,
+                  "name": "_proportion",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7920,
+                  "src": "770:16:31",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7916,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "770:4:31",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "752:35:31"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 7919,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "794:0:31"
+            },
+            "scope": 7929,
+            "src": "726:69:31",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 7923,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "closeCurrentLap",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7921,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "883:2:31"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 7922,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "892:0:31"
+            },
+            "scope": 7929,
+            "src": "859:34:31",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 7928,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getShareholderUnpaidDividends",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7924,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "939:2:31"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 7927,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7926,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7928,
+                  "src": "963:7:31",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7925,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "963:7:31",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "962:9:31"
+            },
+            "scope": 7929,
+            "src": "901:71:31",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 7930,
+        "src": "28:947:31"
+      }
+    ],
+    "src": "0:977:31"
+  },
+  "legacyAST": {
+    "absolutePath": "/C/blockchain/new_version/hashlottery3/truffle/contracts/interfaces/IProfitWallet.sol",
+    "exportedSymbols": {
+      "IProfitWallet": [
+        7929
+      ]
+    },
+    "id": 7930,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 7880,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:31"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 7929,
+        "linearizedBaseContracts": [
+          7929
+        ],
+        "name": "IProfitWallet",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "id": 7891,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "init",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7889,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7882,
+                  "name": "_profit_manager_address",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7891,
+                  "src": "73:31:31",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 7881,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "73:7:31",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 7884,
+                  "name": "_token_address",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7891,
+                  "src": "106:22:31",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 7883,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "106:7:31",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 7886,
+                  "name": "_prize_fund_wallet_address",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7891,
+                  "src": "130:34:31",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 7885,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "130:7:31",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 7888,
+                  "name": "_lottery_address",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7891,
+                  "src": "166:24:31",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 7887,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "166:7:31",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "72:119:31"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 7890,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "198:0:31"
+            },
+            "scope": 7929,
+            "src": "59:140:31",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 7896,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "receiveProfit",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7894,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7893,
+                  "name": "_lap",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7896,
+                  "src": "289:9:31",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7892,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "289:4:31",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "288:11:31"
+            },
+            "payable": true,
+            "returnParameters": {
+              "id": 7895,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "314:0:31"
+            },
+            "scope": 7929,
+            "src": "266:49:31",
+            "stateMutability": "payable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 7901,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getBalance",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7897,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "391:2:31"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 7900,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7899,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7901,
+                  "src": "415:7:31",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7898,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "415:7:31",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "414:9:31"
+            },
+            "scope": 7929,
+            "src": "372:52:31",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 7908,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "payToShareholder",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7906,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7903,
+                  "name": "_shareholder",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7908,
+                  "src": "499:20:31",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 7902,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "499:7:31",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 7905,
+                  "name": "recepient",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7908,
+                  "src": "521:17:31",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 7904,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "521:7:31",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "498:41:31"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 7907,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "546:0:31"
+            },
+            "scope": 7929,
+            "src": "473:74:31",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 7913,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "sendProfitToPrizeFundWallet",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7911,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7910,
+                  "name": "lotteryId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7913,
+                  "src": "652:17:31",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7909,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "652:7:31",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "651:19:31"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 7912,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "677:0:31"
+            },
+            "scope": 7929,
+            "src": "615:63:31",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 7920,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "updateShareHolder",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7918,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7915,
+                  "name": "_holder",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7920,
+                  "src": "753:15:31",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 7914,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "753:7:31",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 7917,
+                  "name": "_proportion",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7920,
+                  "src": "770:16:31",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7916,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "770:4:31",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "752:35:31"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 7919,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "794:0:31"
+            },
+            "scope": 7929,
+            "src": "726:69:31",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 7923,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "closeCurrentLap",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7921,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "883:2:31"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 7922,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "892:0:31"
+            },
+            "scope": 7929,
+            "src": "859:34:31",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 7928,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getShareholderUnpaidDividends",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7924,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "939:2:31"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 7927,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7926,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7928,
+                  "src": "963:7:31",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7925,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "963:7:31",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "962:9:31"
+            },
+            "scope": 7929,
+            "src": "901:71:31",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 7930,
+        "src": "28:947:31"
+      }
+    ],
+    "src": "0:977:31"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "2.0.1",
+  "updatedAt": "2018-12-10T17:48:05.083Z"
+}

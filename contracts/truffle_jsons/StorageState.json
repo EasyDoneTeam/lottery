@@ -1,0 +1,177 @@
+{
+  "contractName": "StorageState",
+  "abi": [],
+  "bytecode": "0x6080604052348015600f57600080fd5b50603580601d6000396000f3006080604052600080fd00a165627a7a72305820436aaf8c5d86e2836397a8dcaac44d4553fa1b2ad92fbdf10bf599f989f038270029",
+  "deployedBytecode": "0x6080604052600080fd00a165627a7a72305820436aaf8c5d86e2836397a8dcaac44d4553fa1b2ad92fbdf10bf599f989f038270029",
+  "sourceMap": "57:53:19:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;57:53:19;;;;;;;",
+  "deployedSourceMap": "57:53:19:-;;;;;",
+  "source": "pragma solidity ^0.4.24;\r\nimport './DataStorage.sol';\r\n\r\ncontract StorageState {\r\n    DataStorage _storage;\r\n}",
+  "sourcePath": "C:\\blockchain\\new_version\\hashlottery3\\truffle\\contracts\\StateStorage.sol",
+  "ast": {
+    "absolutePath": "/C/blockchain/new_version/hashlottery3/truffle/contracts/StateStorage.sol",
+    "exportedSymbols": {
+      "StorageState": [
+        7214
+      ]
+    },
+    "id": 7215,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 7210,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:19"
+      },
+      {
+        "absolutePath": "/C/blockchain/new_version/hashlottery3/truffle/contracts/DataStorage.sol",
+        "file": "./DataStorage.sol",
+        "id": 7211,
+        "nodeType": "ImportDirective",
+        "scope": 7215,
+        "sourceUnit": 609,
+        "src": "26:27:19",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 7214,
+        "linearizedBaseContracts": [
+          7214
+        ],
+        "name": "StorageState",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 7213,
+            "name": "_storage",
+            "nodeType": "VariableDeclaration",
+            "scope": 7214,
+            "src": "86:20:19",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_DataStorage_$608",
+              "typeString": "contract DataStorage"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 7212,
+              "name": "DataStorage",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 608,
+              "src": "86:11:19",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_DataStorage_$608",
+                "typeString": "contract DataStorage"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 7215,
+        "src": "57:53:19"
+      }
+    ],
+    "src": "0:110:19"
+  },
+  "legacyAST": {
+    "absolutePath": "/C/blockchain/new_version/hashlottery3/truffle/contracts/StateStorage.sol",
+    "exportedSymbols": {
+      "StorageState": [
+        7214
+      ]
+    },
+    "id": 7215,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 7210,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:19"
+      },
+      {
+        "absolutePath": "/C/blockchain/new_version/hashlottery3/truffle/contracts/DataStorage.sol",
+        "file": "./DataStorage.sol",
+        "id": 7211,
+        "nodeType": "ImportDirective",
+        "scope": 7215,
+        "sourceUnit": 609,
+        "src": "26:27:19",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 7214,
+        "linearizedBaseContracts": [
+          7214
+        ],
+        "name": "StorageState",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 7213,
+            "name": "_storage",
+            "nodeType": "VariableDeclaration",
+            "scope": 7214,
+            "src": "86:20:19",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_DataStorage_$608",
+              "typeString": "contract DataStorage"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 7212,
+              "name": "DataStorage",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 608,
+              "src": "86:11:19",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_DataStorage_$608",
+                "typeString": "contract DataStorage"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 7215,
+        "src": "57:53:19"
+      }
+    ],
+    "src": "0:110:19"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "2.0.1",
+  "updatedAt": "2018-12-10T17:48:05.078Z"
+}

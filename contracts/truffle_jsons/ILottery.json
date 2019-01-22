@@ -1,0 +1,2187 @@
+{
+  "contractName": "ILottery",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "startNewLottery",
+      "outputs": [
+        {
+          "name": "startedSuccessfully",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "lotteryId",
+          "type": "uint256"
+        }
+      ],
+      "name": "isRewardingAllowed",
+      "outputs": [
+        {
+          "name": "isAllowed",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "lotteryId",
+          "type": "uint256"
+        }
+      ],
+      "name": "isSubmittingTicketsForRewardAllowed",
+      "outputs": [
+        {
+          "name": "isAllowed",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "isSellingTicketsAllowed",
+      "outputs": [
+        {
+          "name": "isAllowed",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "isFillingTicketsAllowed",
+      "outputs": [
+        {
+          "name": "isAllowed",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "isReturningTicketsForCurrentLotteryAllowed",
+      "outputs": [
+        {
+          "name": "isAllowed",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "isTokensTransferAllowed",
+      "outputs": [
+        {
+          "name": "isAllowed",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "lotteryId",
+          "type": "uint256"
+        },
+        {
+          "name": "hash",
+          "type": "bytes32"
+        }
+      ],
+      "name": "checkCombination",
+      "outputs": [
+        {
+          "name": "isWinning",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "lotteryId",
+          "type": "uint256"
+        }
+      ],
+      "name": "getWinningCombination",
+      "outputs": [
+        {
+          "name": "winningDigit1",
+          "type": "uint8"
+        },
+        {
+          "name": "winningDigit2",
+          "type": "uint8"
+        },
+        {
+          "name": "winningDigit3",
+          "type": "uint8"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "digit1",
+          "type": "uint8"
+        },
+        {
+          "name": "digit2",
+          "type": "uint8"
+        },
+        {
+          "name": "digit3",
+          "type": "uint8"
+        }
+      ],
+      "name": "setWinningCombination",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getCurrentLotteryId",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getNextLotteryStart",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity ^0.4.24;\r\n\r\ncontract ILottery {\r\n    function startNewLottery() public returns(bool startedSuccessfully);\r\n    function isRewardingAllowed(uint256 lotteryId) public view returns(bool isAllowed);\r\n    function isSubmittingTicketsForRewardAllowed(uint256 lotteryId) public view returns(bool isAllowed);\r\n    function isSellingTicketsAllowed() public view returns(bool isAllowed);\r\n    function isFillingTicketsAllowed(/*uint256 lotteryId*/) public view returns(bool isAllowed);\r\n    function isReturningTicketsForCurrentLotteryAllowed() public view returns(bool isAllowed);\r\n    //function isWithdrawingDividendsAllowed(uint256 lotteryId) public view returns(bool isAllowed);\r\n    function isTokensTransferAllowed() public view returns(bool isAllowed);\r\n    function checkCombination(uint256 lotteryId, bytes32 hash) public view returns(bool isWinning);\r\n    function getWinningCombination(uint256 lotteryId) public view returns(uint8 winningDigit1, uint8 winningDigit2, uint8 winningDigit3);\r\n    function setWinningCombination(uint8 digit1, uint8 digit2, uint8 digit3) public returns (uint8);\r\n    function getCurrentLotteryId() public view returns(uint256);\r\n    function getNextLotteryStart() public view returns(uint256);\r\n}",
+  "sourcePath": "C:\\blockchain\\new_version\\hashlottery3\\truffle\\contracts\\interfaces\\ILottery.sol",
+  "ast": {
+    "absolutePath": "/C/blockchain/new_version/hashlottery3/truffle/contracts/interfaces/ILottery.sol",
+    "exportedSymbols": {
+      "ILottery": [
+        7762
+      ]
+    },
+    "id": 7763,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 7681,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:25"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 7762,
+        "linearizedBaseContracts": [
+          7762
+        ],
+        "name": "ILottery",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "id": 7686,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "startNewLottery",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7682,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "77:2:25"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 7685,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7684,
+                  "name": "startedSuccessfully",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7686,
+                  "src": "95:24:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 7683,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "95:4:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "94:26:25"
+            },
+            "scope": 7762,
+            "src": "53:68:25",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 7693,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "isRewardingAllowed",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7689,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7688,
+                  "name": "lotteryId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7693,
+                  "src": "155:17:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7687,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "155:7:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "154:19:25"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 7692,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7691,
+                  "name": "isAllowed",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7693,
+                  "src": "194:14:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 7690,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "194:4:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "193:16:25"
+            },
+            "scope": 7762,
+            "src": "127:83:25",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 7700,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "isSubmittingTicketsForRewardAllowed",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7696,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7695,
+                  "name": "lotteryId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7700,
+                  "src": "261:17:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7694,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "261:7:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "260:19:25"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 7699,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7698,
+                  "name": "isAllowed",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7700,
+                  "src": "300:14:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 7697,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "300:4:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "299:16:25"
+            },
+            "scope": 7762,
+            "src": "216:100:25",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 7705,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "isSellingTicketsAllowed",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7701,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "354:2:25"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 7704,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7703,
+                  "name": "isAllowed",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7705,
+                  "src": "377:14:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 7702,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "377:4:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "376:16:25"
+            },
+            "scope": 7762,
+            "src": "322:71:25",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 7710,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "isFillingTicketsAllowed",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7706,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "431:23:25"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 7709,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7708,
+                  "name": "isAllowed",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7710,
+                  "src": "475:14:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 7707,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "475:4:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "474:16:25"
+            },
+            "scope": 7762,
+            "src": "399:92:25",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 7715,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "isReturningTicketsForCurrentLotteryAllowed",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7711,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "548:2:25"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 7714,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7713,
+                  "name": "isAllowed",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7715,
+                  "src": "571:14:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 7712,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "571:4:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "570:16:25"
+            },
+            "scope": 7762,
+            "src": "497:90:25",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 7720,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "isTokensTransferAllowed",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7716,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "727:2:25"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 7719,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7718,
+                  "name": "isAllowed",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7720,
+                  "src": "750:14:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 7717,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "750:4:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "749:16:25"
+            },
+            "scope": 7762,
+            "src": "695:71:25",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 7729,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "checkCombination",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7725,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7722,
+                  "name": "lotteryId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7729,
+                  "src": "798:17:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7721,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "798:7:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 7724,
+                  "name": "hash",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7729,
+                  "src": "817:12:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 7723,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "817:7:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "797:33:25"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 7728,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7727,
+                  "name": "isWinning",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7729,
+                  "src": "851:14:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 7726,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "851:4:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "850:16:25"
+            },
+            "scope": 7762,
+            "src": "772:95:25",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 7740,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getWinningCombination",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7732,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7731,
+                  "name": "lotteryId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7740,
+                  "src": "904:17:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7730,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "904:7:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "903:19:25"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 7739,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7734,
+                  "name": "winningDigit1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7740,
+                  "src": "943:19:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 7733,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "943:5:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 7736,
+                  "name": "winningDigit2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7740,
+                  "src": "964:19:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 7735,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "964:5:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 7738,
+                  "name": "winningDigit3",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7740,
+                  "src": "985:19:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 7737,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "985:5:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "942:63:25"
+            },
+            "scope": 7762,
+            "src": "873:133:25",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 7751,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "setWinningCombination",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7747,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7742,
+                  "name": "digit1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7751,
+                  "src": "1043:12:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 7741,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1043:5:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 7744,
+                  "name": "digit2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7751,
+                  "src": "1057:12:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 7743,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1057:5:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 7746,
+                  "name": "digit3",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7751,
+                  "src": "1071:12:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 7745,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1071:5:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1042:42:25"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 7750,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7749,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7751,
+                  "src": "1101:5:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 7748,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1101:5:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1100:7:25"
+            },
+            "scope": 7762,
+            "src": "1012:96:25",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 7756,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getCurrentLotteryId",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7752,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1142:2:25"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 7755,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7754,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7756,
+                  "src": "1165:7:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7753,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1165:7:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1164:9:25"
+            },
+            "scope": 7762,
+            "src": "1114:60:25",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 7761,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getNextLotteryStart",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7757,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1208:2:25"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 7760,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7759,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7761,
+                  "src": "1231:7:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7758,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1231:7:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1230:9:25"
+            },
+            "scope": 7762,
+            "src": "1180:60:25",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 7763,
+        "src": "28:1215:25"
+      }
+    ],
+    "src": "0:1243:25"
+  },
+  "legacyAST": {
+    "absolutePath": "/C/blockchain/new_version/hashlottery3/truffle/contracts/interfaces/ILottery.sol",
+    "exportedSymbols": {
+      "ILottery": [
+        7762
+      ]
+    },
+    "id": 7763,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 7681,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:25"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 7762,
+        "linearizedBaseContracts": [
+          7762
+        ],
+        "name": "ILottery",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "id": 7686,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "startNewLottery",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7682,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "77:2:25"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 7685,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7684,
+                  "name": "startedSuccessfully",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7686,
+                  "src": "95:24:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 7683,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "95:4:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "94:26:25"
+            },
+            "scope": 7762,
+            "src": "53:68:25",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 7693,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "isRewardingAllowed",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7689,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7688,
+                  "name": "lotteryId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7693,
+                  "src": "155:17:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7687,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "155:7:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "154:19:25"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 7692,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7691,
+                  "name": "isAllowed",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7693,
+                  "src": "194:14:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 7690,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "194:4:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "193:16:25"
+            },
+            "scope": 7762,
+            "src": "127:83:25",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 7700,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "isSubmittingTicketsForRewardAllowed",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7696,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7695,
+                  "name": "lotteryId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7700,
+                  "src": "261:17:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7694,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "261:7:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "260:19:25"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 7699,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7698,
+                  "name": "isAllowed",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7700,
+                  "src": "300:14:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 7697,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "300:4:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "299:16:25"
+            },
+            "scope": 7762,
+            "src": "216:100:25",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 7705,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "isSellingTicketsAllowed",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7701,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "354:2:25"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 7704,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7703,
+                  "name": "isAllowed",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7705,
+                  "src": "377:14:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 7702,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "377:4:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "376:16:25"
+            },
+            "scope": 7762,
+            "src": "322:71:25",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 7710,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "isFillingTicketsAllowed",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7706,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "431:23:25"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 7709,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7708,
+                  "name": "isAllowed",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7710,
+                  "src": "475:14:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 7707,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "475:4:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "474:16:25"
+            },
+            "scope": 7762,
+            "src": "399:92:25",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 7715,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "isReturningTicketsForCurrentLotteryAllowed",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7711,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "548:2:25"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 7714,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7713,
+                  "name": "isAllowed",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7715,
+                  "src": "571:14:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 7712,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "571:4:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "570:16:25"
+            },
+            "scope": 7762,
+            "src": "497:90:25",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 7720,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "isTokensTransferAllowed",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7716,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "727:2:25"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 7719,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7718,
+                  "name": "isAllowed",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7720,
+                  "src": "750:14:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 7717,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "750:4:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "749:16:25"
+            },
+            "scope": 7762,
+            "src": "695:71:25",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 7729,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "checkCombination",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7725,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7722,
+                  "name": "lotteryId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7729,
+                  "src": "798:17:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7721,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "798:7:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 7724,
+                  "name": "hash",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7729,
+                  "src": "817:12:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 7723,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "817:7:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "797:33:25"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 7728,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7727,
+                  "name": "isWinning",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7729,
+                  "src": "851:14:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 7726,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "851:4:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "850:16:25"
+            },
+            "scope": 7762,
+            "src": "772:95:25",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 7740,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getWinningCombination",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7732,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7731,
+                  "name": "lotteryId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7740,
+                  "src": "904:17:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7730,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "904:7:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "903:19:25"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 7739,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7734,
+                  "name": "winningDigit1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7740,
+                  "src": "943:19:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 7733,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "943:5:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 7736,
+                  "name": "winningDigit2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7740,
+                  "src": "964:19:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 7735,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "964:5:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 7738,
+                  "name": "winningDigit3",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7740,
+                  "src": "985:19:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 7737,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "985:5:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "942:63:25"
+            },
+            "scope": 7762,
+            "src": "873:133:25",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 7751,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "setWinningCombination",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7747,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7742,
+                  "name": "digit1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7751,
+                  "src": "1043:12:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 7741,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1043:5:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 7744,
+                  "name": "digit2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7751,
+                  "src": "1057:12:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 7743,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1057:5:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 7746,
+                  "name": "digit3",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7751,
+                  "src": "1071:12:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 7745,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1071:5:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1042:42:25"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 7750,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7749,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7751,
+                  "src": "1101:5:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 7748,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1101:5:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1100:7:25"
+            },
+            "scope": 7762,
+            "src": "1012:96:25",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 7756,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getCurrentLotteryId",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7752,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1142:2:25"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 7755,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7754,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7756,
+                  "src": "1165:7:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7753,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1165:7:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1164:9:25"
+            },
+            "scope": 7762,
+            "src": "1114:60:25",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 7761,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getNextLotteryStart",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7757,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1208:2:25"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 7760,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7759,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7761,
+                  "src": "1231:7:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7758,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1231:7:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1230:9:25"
+            },
+            "scope": 7762,
+            "src": "1180:60:25",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 7763,
+        "src": "28:1215:25"
+      }
+    ],
+    "src": "0:1243:25"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "2.0.1",
+  "updatedAt": "2018-12-10T17:48:05.037Z"
+}

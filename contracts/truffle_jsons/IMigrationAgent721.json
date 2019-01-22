@@ -1,0 +1,593 @@
+{
+  "contractName": "IMigrationAgent721",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "finalizeMigration",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_client",
+          "type": "address"
+        },
+        {
+          "name": "_digs",
+          "type": "bytes32[]"
+        },
+        {
+          "name": "_secret",
+          "type": "bytes32"
+        },
+        {
+          "name": "_lap",
+          "type": "uint256"
+        },
+        {
+          "name": "_deadline",
+          "type": "uint256"
+        },
+        {
+          "name": "_ticket",
+          "type": "uint256"
+        }
+      ],
+      "name": "migrateToken",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity ^0.4.24;\r\n\r\ncontract IMigrationAgent721 {\r\n    function finalizeMigration() external;\r\n    function migrateToken(address _client, bytes32[] _digs, bytes32 _secret, uint _lap, uint _deadline, uint _ticket) public;\r\n}",
+  "sourcePath": "C:\\blockchain\\new_version\\hashlottery3\\truffle\\contracts\\interfaces\\IMigrationAgent721.sol",
+  "ast": {
+    "absolutePath": "/C/blockchain/new_version/hashlottery3/truffle/contracts/interfaces/IMigrationAgent721.sol",
+    "exportedSymbols": {
+      "IMigrationAgent721": [
+        7827
+      ]
+    },
+    "id": 7828,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 7807,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:28"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 7827,
+        "linearizedBaseContracts": [
+          7827
+        ],
+        "name": "IMigrationAgent721",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "id": 7810,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "finalizeMigration",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7808,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "89:2:28"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 7809,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "100:0:28"
+            },
+            "scope": 7827,
+            "src": "63:38:28",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 7826,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "migrateToken",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7824,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7812,
+                  "name": "_client",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7826,
+                  "src": "129:15:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 7811,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "129:7:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 7815,
+                  "name": "_digs",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7826,
+                  "src": "146:15:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_bytes32_$dyn_memory_ptr",
+                    "typeString": "bytes32[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 7813,
+                      "name": "bytes32",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "146:7:28",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "id": 7814,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "146:9:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_bytes32_$dyn_storage_ptr",
+                      "typeString": "bytes32[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 7817,
+                  "name": "_secret",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7826,
+                  "src": "163:15:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 7816,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "163:7:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 7819,
+                  "name": "_lap",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7826,
+                  "src": "180:9:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7818,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "180:4:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 7821,
+                  "name": "_deadline",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7826,
+                  "src": "191:14:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7820,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "191:4:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 7823,
+                  "name": "_ticket",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7826,
+                  "src": "207:12:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7822,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "207:4:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "128:92:28"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 7825,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "227:0:28"
+            },
+            "scope": 7827,
+            "src": "107:121:28",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 7828,
+        "src": "28:203:28"
+      }
+    ],
+    "src": "0:231:28"
+  },
+  "legacyAST": {
+    "absolutePath": "/C/blockchain/new_version/hashlottery3/truffle/contracts/interfaces/IMigrationAgent721.sol",
+    "exportedSymbols": {
+      "IMigrationAgent721": [
+        7827
+      ]
+    },
+    "id": 7828,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 7807,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:28"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 7827,
+        "linearizedBaseContracts": [
+          7827
+        ],
+        "name": "IMigrationAgent721",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "id": 7810,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "finalizeMigration",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7808,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "89:2:28"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 7809,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "100:0:28"
+            },
+            "scope": 7827,
+            "src": "63:38:28",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 7826,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "migrateToken",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7824,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7812,
+                  "name": "_client",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7826,
+                  "src": "129:15:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 7811,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "129:7:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 7815,
+                  "name": "_digs",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7826,
+                  "src": "146:15:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_bytes32_$dyn_memory_ptr",
+                    "typeString": "bytes32[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 7813,
+                      "name": "bytes32",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "146:7:28",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "id": 7814,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "146:9:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_bytes32_$dyn_storage_ptr",
+                      "typeString": "bytes32[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 7817,
+                  "name": "_secret",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7826,
+                  "src": "163:15:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 7816,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "163:7:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 7819,
+                  "name": "_lap",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7826,
+                  "src": "180:9:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7818,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "180:4:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 7821,
+                  "name": "_deadline",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7826,
+                  "src": "191:14:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7820,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "191:4:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 7823,
+                  "name": "_ticket",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7826,
+                  "src": "207:12:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7822,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "207:4:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "128:92:28"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 7825,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "227:0:28"
+            },
+            "scope": 7827,
+            "src": "107:121:28",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 7828,
+        "src": "28:203:28"
+      }
+    ],
+    "src": "0:231:28"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "2.0.1",
+  "updatedAt": "2018-12-10T17:48:05.082Z"
+}
